@@ -16,7 +16,7 @@ export default function LoginForm() {
     setErrorMessage("");
 
     try {
-      const response = await fetch("http://localhost:3001/api/auth/login", {
+      const response = await fetch("/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password })
@@ -55,7 +55,6 @@ export default function LoginForm() {
         />
       </div>
 
-
       <div className="flex flex-col gap-1.5">
         <label className="font-semibold text-slate-700">Password</label>
         <input
@@ -68,11 +67,9 @@ export default function LoginForm() {
         />
       </div>
 
-
       {errorMessage && (
         <div className="text-red-500 text-xs mt-[-4px]">{errorMessage}</div>
       )}
-
 
       <div className="flex items-center gap-2 mt-1 mb-1">
         <input
